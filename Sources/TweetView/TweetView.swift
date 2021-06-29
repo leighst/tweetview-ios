@@ -120,7 +120,9 @@ public class TweetView: UIView {
                     document.getElementById('wrapper'),
                     { align: 'center', theme: '\(theme)' }
                 ).then(el => {
-                    window.webkit.messageHandlers.heightCallback.postMessage(el.offsetHeight.toString())
+                    setTimeout(() => {
+                        window.webkit.messageHandlers.heightCallback.postMessage(el.offsetHeight.toString())
+                    }, 250)
                 });
             """)
         }
